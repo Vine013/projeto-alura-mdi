@@ -1,6 +1,15 @@
-function tocaSom (idElementoAudio){
+function tocaSom (seletorAudio){
 
-    document.querySelector(idElementoAudio).play() //para iniciar o gatilho
+   const elemento = document.querySelector(seletorAudio) //para iniciar o gatilho
+
+    if(elemento != null && elemento.localName === 'audio'){
+            elemento.play();
+    }
+    else
+    {
+        console.log('Elemento não encontrado ou Seletor inválido!');
+
+    }
 }
 
 const listaDeTeclas = document.querySelectorAll('.tecla'); //Definimos uma constante para a captura das informações
